@@ -1,0 +1,57 @@
+-- Hello - this is a very short document as a reference to you ( and myself ) 
+-- The basic commands of SQL and what they can achieve are highlighted here
+
+-- The table I will be using can be accessed by using the following link:
+-- https://www.programiz.com/sql/online-compiler/
+
+
+-- Imagine we have a table called 'Customers'
+-- With the columns 'customer_id', 'first_name', 'last_name' & 'age'
+
+-- Imagine we have another table called 'Orders'
+-- With the columns 'order_id', 'item', 'amount', 'customer_id'
+
+
+-- \\__________________SELECTION__________________// --
+
+--  ⬇⬇ Will select the 'first_name' column from the table 'Customers'
+select first_name from Customers;
+
+-- We can take this a step further by making this command into...
+-- This will only select the 'first_name' fields which start with 'J'
+select first_name from Customers where first_name like 'J%';
+
+-- Keep in mind, this is CAP sensitive!
+-- Conversely - you can find items that end with 'X' by doing '%X' 
+
+-- ⬇⬇ We can also select every field from a column by the following...
+select * from Customers; 
+
+-- ⬇⬇ If you're curious as to how many items are in a column, you can do :
+select count(*) from Customers;
+
+
+-- \\__________________INSERTION__________________// --
+
+--  ⬇⬇ Will insert (add) into first_name the name 'name1'
+insert into Customers (first_name) values ('name1');
+-- but there is a problem with this, as only the name is added 
+-- This leaves a the other 3 columns blank!
+
+-- [[ BTW, you can also add multiple names to the same position ]]
+-- This can be done by running the following...
+insert into Customers (first_name) values ('name1, name2');
+
+-- \\_____________DELETING & UPDATING_____________// --
+
+-- If you made a mistake you can, of course, delete it 
+delete from Customers where first_name == 'name1';
+
+-- Likewise, you can also update any field that might need to be changed
+update Customers set customer_id = '7' where (first_name == 'name1');
+
+
+
+
+
+
